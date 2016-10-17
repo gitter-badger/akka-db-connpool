@@ -1,6 +1,8 @@
 Akka extension for db connection pool
 =====================================
 
+[![Build Status](https://travis-ci.org/zgwmike/akka-db-connpool.svg?branch=master)](https://travis-ci.org/zgwmike/akka-db-connpool)
+
 What it is
 ----------
 It's an akka extension to create database connection from a preconfigure pool.

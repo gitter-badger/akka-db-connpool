@@ -1,4 +1,5 @@
 language: scala
 jdk: oraclejdk8
+script: sbt clean publish
 scala:
   - 2.11.8

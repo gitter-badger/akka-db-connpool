@@ -99,6 +99,7 @@ class ConnectionPool(className: Option[String] = None, url: Option[String] = Non
         case Some(pool) =>
           log.info("Shutting down connection pool")
           pool.shutdown()
+        case None=>          
       }
   }
 }
