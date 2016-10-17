@@ -14,11 +14,3 @@ libraryDependencies ++= {
     "com.jolbox" % "bonecp" % "0.8.0.RELEASE"
   )
 }
-
-credentials += Credentials("Sonatype Nexus Repository Manager", "mgr1.tweb.twdev1.websys.tmcs", "admin", "password")
-publishTo := {
-  if (isSnapshot.value)
-    Some("TW NEXUS Testing Repo" at "http://mgr1.tweb.twdev1.websys.tmcs:8082/nexus/content/repositories/snapshots/")
-  else
-    Some("TW NEXUS Testing Repo" at "http://mgr1.tweb.twdev1.websys.tmcs:8082/nexus/content/repositories/release/")
-}
