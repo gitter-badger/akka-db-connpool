@@ -3,14 +3,15 @@ Akka extension for db connection pool
 
 How to add it to your sbt project.
 -------------
-add following to akka config file to load the extension.
+add dependency to build.sbt
 
-`
-akka.library-extensions += "org.guangwenz.akka.db.connpool.DbConnectionPoolExtension"
-`
+```scala
+"org.guangwenz" %% "akka-db-connpool" % "1.0.0-SNAPSHOT",
+```
+
 then add following to the application.conf
 
-`
+```scala
 guangwenz.akka.db {
   jdbc {
     className = "${YOUR_JDBC_DRIVER_CLS}"
@@ -20,8 +21,9 @@ guangwenz.akka.db {
   }
 }
 akka.library-extensions += "org.guangwenz.akka.db.connpool.DbConnectionPoolExtension"
-`
-check reference.conf for more config options.
+```
+
+check `reference.conf` for more config options.
 
 Example code to use it
 ----------------------
