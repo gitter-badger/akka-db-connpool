@@ -1,6 +1,11 @@
 Akka extension for db connection pool
 =====================================
 
+What it is
+----------
+It's an akka extension to create database connection from a preconfigure pool.
+it's built on top of bonecp
+
 How to add it to your sbt project.
 -------------
 add dependency to build.sbt
@@ -25,6 +30,29 @@ akka.library-extensions += "org.guangwenz.akka.db.connpool.DbConnectionPoolExten
 
 check `reference.conf` for more config options.
 
-Example code to use it
+Example code to grab a connection
 ----------------------
-//TODO
+```scala
+import org.guangwenz.akka.db.connpool.DbConnectionPoolExtension
+
+val conn = DbConnectionPoolExtension(system).getConnection
+conn match {
+    case Some(connection)=>
+        //Use it!
+    case None=>
+        //Oops, something is wrong, check the logs.
+}
+```
+Example code to print the stats
+----------------------
+```scala
+import org.guangwenz.akka.db.connpool.ConnectionPool.PrintDbStats
+import org.guangwenz.akka.db.connpool.DbConnectionPoolExtension
+
+val actor = DbConnectionPoolExtension(system).getConnectionPoolActor.get
+actor ! PrintDbStats("test")
+```
+
+Reference
+---------
+[BoneCP](http://www.jolbox.com/ "BoneCP")

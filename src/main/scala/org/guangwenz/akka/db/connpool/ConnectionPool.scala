@@ -21,7 +21,7 @@ object ConnectionPool {
 
   case class DbConnectionRetrieved(reqId: String, conn: Connection)
 
-  case class GetDbConnectionException(reqId: String, msg: String) extends Exception
+  case class GetDbConnectionException(reqId: String, reason: String) extends Exception
 
 }
 
@@ -95,7 +95,10 @@ class ConnectionPool(className: Option[String] = None, url: Option[String] = Non
           sender ! "Fail"
       }
     case ShutdownConnectionPool =>
-      if (connectionPool.isDefined)
-        connectionPool.get.shutdown()
+      connectionPool match {
+        case Some(pool) =>
+          log.info("Shutting down connection pool")
+          pool.shutdown()
+      }
   }
 }

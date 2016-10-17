@@ -10,7 +10,7 @@ pomExtra in Global := {
   <scm>
     <connection>scm:git:github.com/zgwmike/akka-db-connpool.git</connection>
     <developerConnection>scm:git:git@github.com:zgwmike/akka-db-connpool.git</developerConnection>
-    <url>github.com/zgwmike/akka-db-connpool.git</url>
+    <url>git@github.com/zgwmike/akka-db-connpool.git</url>
   </scm>
   <developers>
     <developer>

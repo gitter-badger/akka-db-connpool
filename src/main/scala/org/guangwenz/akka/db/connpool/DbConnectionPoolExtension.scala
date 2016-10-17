@@ -38,7 +38,7 @@ class DbConnectionPoolExtension(system: ExtendedActorSystem) extends Extension {
     }
   }
 
-  def getConnectionPool: Option[ActorRef] = {
+  def getConnectionPoolActor: Option[ActorRef] = {
     Some(connectionPool)
   }
 }
