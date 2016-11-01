@@ -1,6 +1,8 @@
 Akka extension for db connection pool
 =====================================
 
+[![Join the chat at https://gitter.im/akka-db-connpool/Lobby](https://badges.gitter.im/akka-db-connpool/Lobby.svg)](https://gitter.im/akka-db-connpool/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/zgwmike/akka-db-connpool.svg?branch=master)](https://travis-ci.org/zgwmike/akka-db-connpool)
 
 What it is
